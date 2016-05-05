@@ -77,3 +77,12 @@ body {
     border-bottom: 0;
   }
 }
+
+.input-gi {
+  text-transform: uppercase;
+  height: 82px;
+  padding: 10px 16px;
+  font-size: 70px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}

@@ -1,5 +1,4 @@
 import Ember from 'ember';
-// import DB from 'contry-codes-conquest/app/services/db';
 
 export default Ember.Service.extend({
   numAssaults: 10,
@@ -7,6 +6,8 @@ export default Ember.Service.extend({
   db: Ember.inject.service('db'),
 
   init: function() {
+    this.get('assaults').clear();
+
     _.times(this.get('numAssaults'), () => {
       let assaultConfig = _.sample(this.get('db.challenges'));
 
@@ -18,5 +19,11 @@ export default Ember.Service.extend({
         }
       );
     });
+  },
+
+  nextAssault: function() {
+    let result = _.find(this.get('assaults'), (element) => { return element.userAnswer == null; });
+    console.log("XXX: result", result);
+    return result;
   }
 });

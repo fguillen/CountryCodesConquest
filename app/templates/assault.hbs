@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1>{{model.config.question}}</h1>
+
+  <form>
+    <div class="form-group">
+      {{input value=userResponse type="text" maxlength="2" class="form-control input-gi text-center" aria-describedby="help-block"}}
+      <span class="text-left help-block">Write the 2 letters of the CountryCode of {{model.config.question}}</span>
+    </div>
+
+  </form>
+
+  <p><button class="btn btn-lg btn-success" {{action "resolveAssault"}} href="#" role="button">Send</button></p>
+</div>

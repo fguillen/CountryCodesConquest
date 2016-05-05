@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('init', { path: '' });
+  this.route('assault');
 });
 
 export default Router;
