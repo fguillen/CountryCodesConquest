@@ -2,12 +2,15 @@
   <h1>{{model.config.question}}</h1>
 
   <form>
-    <div class="form-group">
-      {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center" aria-describedby="help-block"}}
+    <div class="form-group {{fieldClass}}">
+      {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center"}}
       <span class="text-left help-block">Write the 2 letters of the country code of <mark>{{model.config.question}}</mark></span>
     </div>
-
   </form>
 
-  <p><button class="btn btn-lg btn-success" {{action "resolveAssault"}} href="#" role="button">Send</button></p>
+  {{#if model.completed}}
+    <p><button class="btn btn-lg btn-success" {{action "nextAssault"}} href="#" role="button">Next Assault</button></p>
+  {{else}}
+    <p><button class="btn btn-lg btn-success" {{action "resolveAssault"}} href="#" role="button">Send</button></p>
+  {{/if}}
 </div>

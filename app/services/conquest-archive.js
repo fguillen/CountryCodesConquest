@@ -13,6 +13,7 @@ export default Ember.Service.extend({
 
       this.get('assaults').pushObject(
         {
+          completed: false,
           userAnswer: null,
           result: null,
           config: assaultConfig
@@ -22,7 +23,7 @@ export default Ember.Service.extend({
   },
 
   nextAssault: function() {
-    let result = _.find(this.get('assaults'), (element) => { return element.userAnswer == null; });
+    let result = _.find(this.get('assaults'), (element) => { return !element.completed; });
     console.log("XXX: result", result);
     return result;
   }
