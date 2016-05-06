@@ -1,7 +1,8 @@
 # Country-codes-conquest
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Small web-application to test your ability of associating the correct Country Code to a Country Name
+
+State of the Art: Work in Progress
 
 ## Prerequisites
 
