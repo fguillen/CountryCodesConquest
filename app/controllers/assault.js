@@ -16,7 +16,9 @@ export default Ember.Controller.extend({
     },
 
     nextAssault() {
-      this.transitionToRoute('assault');
+      let assault = this.get('conquestArchive').nextAssault();
+      this.set('userAnswer', null);
+      this.transitionToRoute('assault', assault.id);
     }
   }
 });

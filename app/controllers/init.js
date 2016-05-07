@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
     init() {
       console.log("XXX: init()");
       this.get('conquestArchive').init();
-      this.transitionToRoute('assault');
+      this.transitionToRoute('assault', this.get('conquestArchive').nextAssault().id);
     }
   }
 });

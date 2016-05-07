@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import { v1 } from "ember-uuid";
 
 export default Ember.Service.extend({
-  numAssaults: 10,
+  numAssaults: 3,
   assaults: [],
   db: Ember.inject.service('db'),
 
@@ -13,6 +14,7 @@ export default Ember.Service.extend({
 
       this.get('assaults').pushObject(
         {
+          id: v1(),
           completed: false,
           userAnswer: null,
           result: null,
@@ -25,6 +27,11 @@ export default Ember.Service.extend({
 
   nextAssault: function() {
     let result = _.find(this.get('assaults'), (element) => { return !element.completed; });
+    return result;
+  },
+
+  getAssault: function(assaultId) {
+    let result = _.find(this.get('assaults'), (element) => { return assaultId === element.id; });
     return result;
   },
 
