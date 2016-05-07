@@ -4,10 +4,12 @@ export default Ember.Controller.extend({
   userAnswer: '',
   conquestArchive: Ember.inject.service('conquest-archive'),
 
-  fieldClass: Ember.computed('model.result', function() {
-    if(this.get('model.result') === null) { return ""; }
-    if(this.get('model.result') === true) { return "has-success"; }
-    if(this.get('model.result') === false) { return "has-error"; }
+  isSuccess: Ember.computed('model.result', function() {
+    return this.get('model.result') === true;
+  }),
+
+  isError: Ember.computed('model.result', function() {
+    return this.get('model.result') === false;
   }),
 
   nextAssault() {

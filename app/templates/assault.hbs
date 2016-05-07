@@ -3,13 +3,13 @@
     <h1>{{assault.question}}</h1>
 
     <form {{action "resolveAssault" on="submit"}}>
-      <div class="form-group {{fieldClass}}">
+      <div class="form-group {{if isError 'has-error'}} {{if isSuccess 'has-success'}}">
         <div class="input-group">
           {{#focus-input}}
             {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center" autocomplete="off"}}
           {{/focus-input}}
           <span class="input-group-btn">
-          <button class="btn btn-gi btn-success" {{action "resolveAssault"}} href="#" role="button" disabled={{assault.completed}}>Go!</button>
+            <button class="btn btn-gi btn-primary {{if isError 'btn-danger'}} {{if isSuccess 'btn-success'}}" {{action "resolveAssault"}} href="#" role="button" disabled={{assault.completed}}>Go!</button>
           </span>
         </div>
         <span class="text-left help-block">Write the 2 letters of the country code of <mark>{{assault.question}}</mark></span>
