@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  userAnswer: null,
+  userAnswer: '',
   conquestArchive: Ember.inject.service('conquest-archive'),
 
   fieldClass: Ember.computed('model.result', function() {
@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 
   nextAssault() {
     let assault = this.get('conquestArchive').nextAssault();
-    this.set('userAnswer', null);
+    this.set('userAnswer', '');
 
     if(assault) {
       this.transitionToRoute('assault', assault.id);

@@ -36,9 +36,9 @@ export default Ember.Service.extend({
   },
 
   resolveAssault: function(assault, userAnswer){
-    Ember.set(assault, 'userAnswer', userAnswer);
+    Ember.set(assault, 'userAnswer', userAnswer.toUpperCase());
 
-    if(assault.answer === userAnswer){
+    if(assault.answer === assault.userAnswer){
       Ember.set(assault, 'result', true);
     } else {
       Ember.set(assault, 'result', false);
