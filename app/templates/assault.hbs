@@ -3,10 +3,13 @@
 
   <form {{action "resolveAssault" on="submit"}}>
     <div class="form-group {{fieldClass}}">
-      {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center" autocomplete="off"}}
+      <div class="input-group">
+        {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center" autocomplete="off"}}
+        <span class="input-group-btn">
+        <button class="btn btn-gi btn-success" {{action "resolveAssault"}} href="#" role="button" disabled={{model.completed}}>Go!</button>
+        </span>
+      </div>
       <span class="text-left help-block">Write the 2 letters of the country code of <mark>{{model.question}}</mark></span>
     </div>
   </form>
-
-  <p><button class="btn btn-lg btn-success" {{action "resolveAssault"}} href="#" role="button" disabled={{model.completed}}>Send</button></p>
 </div>

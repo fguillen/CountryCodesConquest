@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
     resolveAssault() {
       this.get('conquestArchive').resolveAssault(this.get('model'), this.get('userAnswer'));
 
-      Ember.run.later(() => { this.nextAssault(); }, 2000);
+      Ember.run.later(() => { this.nextAssault(); }, 1000);
     }
   }
 });
