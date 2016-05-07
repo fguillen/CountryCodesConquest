@@ -3,14 +3,10 @@
 
   <form {{action "resolveAssault" on="submit"}}>
     <div class="form-group {{fieldClass}}">
-      {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center"}}
+      {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center" autocomplete="off"}}
       <span class="text-left help-block">Write the 2 letters of the country code of <mark>{{model.question}}</mark></span>
     </div>
   </form>
 
-  {{#if model.completed}}
-    <p><button class="btn btn-lg btn-success" {{action "nextAssault"}} href="#" role="button">Next Assault</button></p>
-  {{else}}
-    <p><button class="btn btn-lg btn-success" {{action "resolveAssault"}} href="#" role="button">Send</button></p>
-  {{/if}}
+  <p><button class="btn btn-lg btn-success" {{action "resolveAssault"}} href="#" role="button" disabled={{model.completed}}>Send</button></p>
 </div>

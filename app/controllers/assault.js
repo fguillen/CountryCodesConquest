@@ -10,19 +10,22 @@ export default Ember.Controller.extend({
     if(this.get('model.result') === false) { return "has-error"; }
   }),
 
+  nextAssault() {
+    let assault = this.get('conquestArchive').nextAssault();
+    this.set('userAnswer', null);
+
+    if(assault) {
+      this.transitionToRoute('assault', assault.id);
+    } else {
+      this.transitionToRoute('end');
+    }
+  },
+
   actions: {
     resolveAssault() {
       this.get('conquestArchive').resolveAssault(this.get('model'), this.get('userAnswer'));
-    },
 
-    nextAssault() {
-      let assault = this.get('conquestArchive').nextAssault();
-      this.set('userAnswer', null);
-      if(assault) {
-        this.transitionToRoute('assault', assault.id);
-      } else {
-        this.transitionToRoute('end');
-      }
+      Ember.run.later(() => { this.nextAssault(); }, 2000);
     }
   }
 });
