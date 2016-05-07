@@ -16,7 +16,8 @@ export default Ember.Service.extend({
           completed: false,
           userAnswer: null,
           result: null,
-          config: assaultConfig
+          question: assaultConfig.question,
+          answer: assaultConfig.answer
         }
       );
     });
@@ -24,7 +25,18 @@ export default Ember.Service.extend({
 
   nextAssault: function() {
     let result = _.find(this.get('assaults'), (element) => { return !element.completed; });
-    console.log("XXX: result", result);
     return result;
+  },
+
+  resolveAssault: function(assault, userAnswer){
+    Ember.set(assault, 'userAnswer', userAnswer);
+
+    if(assault.answer === userAnswer){
+      Ember.set(assault, 'result', true);
+    } else {
+      Ember.set(assault, 'result', false);
+    }
+
+    Ember.set(assault, 'completed', true);
   }
 });
