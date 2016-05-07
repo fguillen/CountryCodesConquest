@@ -22,6 +22,7 @@ module.exports = function(defaults) {
 
   app.import(app.bowerDirectory + '/bootstrap/dist/js/bootstrap.js');
   app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css');
+  app.import(app.bowerDirectory + '/bootstrap/fonts/glyphicons-halflings-regular.woff', { destDir: 'fonts' });
 
   app.import(app.bowerDirectory + '/underscore/underscore-min.js');
 
