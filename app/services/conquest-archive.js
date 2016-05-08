@@ -45,10 +45,10 @@ export default Ember.Service.extend({
 
     if(assault.answer === assault.userAnswer){
       Ember.set(assault, 'result', true);
-      if(this.get('settings.sound')) { this.get('soundGood').play() };
+      if(this.get('settings.sound')) { this.get('soundGood').play(); }
     } else {
       Ember.set(assault, 'result', false);
-      if(this.get('settings.sound')) { this.get('soundError').play() };
+      if(this.get('settings.sound')) { this.get('soundError').play(); }
     }
 
     Ember.set(assault, 'completed', true);
