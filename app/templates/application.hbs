@@ -4,10 +4,46 @@
     <nav>
       <ul class="nav nav-pills pull-right">
         <li role="presentation"><a href="#" {{action "newBattle"}}>New Battle</a></li>
+        <li role="presentation"><a href="#" data-toggle="modal" data-target="#settings-modal">Settings</a></li>
       </ul>
     </nav>
     <h4 class="text-muted">CountryCode Battle</h4>
   </div>
 
   {{liquid-outlet}}
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="settings-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Number of Assaults per Conquest</label>
+            {{#x-select value=settings.numAssaultsPerConquest class="form-control"}}
+              {{#x-option value=5}}5{{/x-option}}
+              {{#x-option value=10}}10{{/x-option}}
+              {{#x-option value=20}}20{{/x-option}}
+              {{#x-option value=50}}50{{/x-option}}
+            {{/x-select}}
+
+          </div>
+          <div class="checkbox">
+            <label>
+              {{input type="checkbox" checked=settings.sound}} Sound
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
