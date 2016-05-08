@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  numAssaultsPerConquest: 10,
+  numAssaultsPerConquest: 5,
   sound: false
 });

@@ -1,0 +1,19 @@
+{{#if isSuperGood}}
+  <div class="alert alert-success" role="alert"><strong>Perfect!</strong> All answers right.</div>
+{{/if}}
+
+{{#if isGood}}
+  <div class="alert alert-info" role="alert"><strong>is Good!</strong> {{conquestArchive.rightAnswers}} of {{conquestArchive.totalAssaults}}.</div>
+{{/if}}
+
+{{#if isFine}}
+  <div class="alert alert-warning" role="alert"><strong>is Fine!</strong> {{conquestArchive.rightAnswers}} of {{conquestArchive.totalAssaults}}.</div>
+{{/if}}
+
+{{#if isBad}}
+  <div class="alert alert-danger" role="alert"><strong>is Bad!</strong> {{conquestArchive.rightAnswers}} of {{conquestArchive.totalAssaults}}.</div>
+{{/if}}
+
+{{#if isHorrible}}
+  <div class="alert alert-danger" role="alert"><strong>is Horrible!</strong> {{conquestArchive.rightAnswers}} of {{conquestArchive.totalAssaults}}.</div>
+{{/if}}

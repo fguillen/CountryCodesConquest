@@ -52,5 +52,27 @@ export default Ember.Service.extend({
     }
 
     Ember.set(assault, 'completed', true);
-  }
+  },
+
+  totalAssaults: Ember.computed('assaults', function(){
+    return this.get('assaults').length;
+  }),
+
+  completedAssaults: Ember.computed('assaults.@each.completed', function(){
+    return _.where(this.get('assaults'), { completed: true }).length;
+  }),
+
+  rightAnswers: Ember.computed('assaults.@each.result', function() {
+    return _.where(this.get('assaults'), { result: true }).length;
+  }),
+
+  percentageCompleted: Ember.computed('totalAssaults', 'completedAssaults', function() {
+    return (this.get('completedAssaults') / this.get('totalAssaults')) * 100;
+  }),
+
+  percentageRightAnswers: Ember.computed('totalAssaults', 'rightAnswers', function() {
+    return (this.get('rightAnswers') / this.get('totalAssaults')) * 100;
+  }),
+
+
 });
