@@ -2,7 +2,7 @@
 
 Small web-application to test your ability of associating the correct Country Code to a Country Name
 
-State of the Art: Work in Progress
+State of the Playable Version: [http://fguillen.github.io/CountryCodesConquest/](http://fguillen.github.io/CountryCodesConquest/)
 
 ## Prerequisites
 
