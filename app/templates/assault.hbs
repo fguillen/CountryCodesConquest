@@ -8,7 +8,18 @@
           <div class="input-group">
             {{input value=userAnswer type="text" maxlength="2" class="form-control input-lg text-center" autocomplete="off"}}
             <span class="input-group-btn">
-              <button class="btn btn-lg btn-primary {{if isError 'btn-danger'}} {{if isSuccess 'btn-success'}}" {{action "resolveAssault"}} href="#" role="button" disabled={{assault.completed}}>Go!</button>
+              {{#unless isCompleted}}
+                <button class="btn btn-lg btn-primary" {{action "resolveAssault"}} role="button" disabled={{isAnswerStillNotFilled}}>Go!</button>
+              {{/unless}}
+
+              {{#if isError}}
+                <button class="btn btn-lg btn-primary btn-danger btn-icon" role="button" disabled="true"><span class="glyphicon glyphicon-remove"></span></button>
+              {{/if}}
+
+              {{#if isSuccess}}
+                <button class="btn btn-lg btn-primary btn-success btn-icon" role="button" disabled="true"><span class="glyphicon glyphicon-ok"></span></button>
+              {{/if}}
+
             </span>
           </div>
         {{/focus-input}}

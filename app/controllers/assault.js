@@ -12,6 +12,12 @@ export default Ember.Controller.extend({
     return this.get('model.result') === false;
   }),
 
+  isCompleted: Ember.computed.bool('model.completed'),
+
+  isAnswerStillNotFilled: Ember.computed('userAnswer', function() {
+    return this.get('userAnswer').length < 2;
+  }),
+
   nextAssault() {
     let assault = this.get('conquestArchive').nextAssault();
     this.set('userAnswer', '');
