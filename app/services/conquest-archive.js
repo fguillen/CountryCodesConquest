@@ -4,9 +4,10 @@ import { v1 } from "ember-uuid";
 export default Ember.Service.extend({
   numAssaults: 10,
   assaults: [],
+  initialized: false,
   db: Ember.inject.service('db'),
 
-  init: function() {
+  initialize: function() {
     this.get('assaults').clear();
 
     _.times(this.get('numAssaults'), () => {
@@ -23,6 +24,8 @@ export default Ember.Service.extend({
         }
       );
     });
+
+    this.set('initialized', true);
   },
 
   nextAssault: function() {

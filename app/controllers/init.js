@@ -4,9 +4,9 @@ export default Ember.Controller.extend({
   conquestArchive: Ember.inject.service('conquest-archive'),
 
   actions: {
-    init() {
-      console.log("XXX: init()");
-      this.get('conquestArchive').init();
+    initialize() {
+      console.log("XXX: initialize()");
+      this.get('conquestArchive').initialize();
       this.transitionToRoute('assault', this.get('conquestArchive').nextAssault().id);
     }
   }
