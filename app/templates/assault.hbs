@@ -1,17 +1,17 @@
 {{#liquid-bind model class="liquid-monster" as |assault|}}
-  <div class="jumbotron">
+  <div class="assault">
     <h1>{{assault.question}}</h1>
 
     <form {{action "resolveAssault" on="submit"}}>
       <div class="form-group {{if isError 'has-error'}} {{if isSuccess 'has-success'}}">
-        <div class="input-group">
-          {{#focus-input}}
-            {{input value=userAnswer type="text" maxlength="2" class="form-control input-gi text-center" autocomplete="off"}}
-          {{/focus-input}}
-          <span class="input-group-btn">
-            <button class="btn btn-gi btn-primary {{if isError 'btn-danger'}} {{if isSuccess 'btn-success'}}" {{action "resolveAssault"}} href="#" role="button" disabled={{assault.completed}}>Go!</button>
-          </span>
-        </div>
+        {{#focus-input}}
+          <div class="input-group">
+            {{input value=userAnswer type="text" maxlength="2" class="form-control input-lg text-center" autocomplete="off"}}
+            <span class="input-group-btn">
+              <button class="btn btn-lg btn-primary {{if isError 'btn-danger'}} {{if isSuccess 'btn-success'}}" {{action "resolveAssault"}} href="#" role="button" disabled={{assault.completed}}>Go!</button>
+            </span>
+          </div>
+        {{/focus-input}}
         <span class="text-left help-block">Write the 2 letters of the country code of <mark>{{assault.question}}</mark></span>
       </div>
     </form>

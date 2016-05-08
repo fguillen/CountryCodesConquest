@@ -78,17 +78,6 @@ body {
   }
 }
 
-.input-gi {
+.assault .input-lg {
   text-transform: uppercase;
-  height: 82px;
-  padding: 10px 16px;
-  font-size: 70px;
-  line-height: 1.3333333;
-  border-radius: 6px;
-}
-
-.btn-gi {
-  font-size: 39px !important;
-  line-height: 1.3333333;
-  border-radius: 6px;
-}
+ }
