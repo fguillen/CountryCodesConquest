@@ -2,7 +2,7 @@ import Ember from 'ember';
 import { v1 } from "ember-uuid";
 
 export default Ember.Service.extend({
-  numAssaults: 3,
+  numAssaults: 10,
   assaults: [],
   db: Ember.inject.service('db'),
 
