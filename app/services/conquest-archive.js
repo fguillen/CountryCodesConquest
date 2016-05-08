@@ -48,7 +48,6 @@ export default Ember.Service.extend({
       this.get('soundGood').play();
     } else {
       Ember.set(assault, 'result', false);
-      let snd =
       this.get('soundError').play();
     }
 
