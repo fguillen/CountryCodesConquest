@@ -4,6 +4,11 @@ Small web-application to test your ability of associating the correct Country Co
 
 State of the Playable Version: [http://fguillen.github.io/CountryCodesConquest/](http://fguillen.github.io/CountryCodesConquest/)
 
+## Deploy to github pages
+
+    ember github-pages:commit --message "New version"
+    git push origin gh-pages:gh-pages
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
