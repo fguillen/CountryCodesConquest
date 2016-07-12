@@ -12,9 +12,9 @@ export default Ember.Service.extend({
   initialize: function() {
     this.get('assaults').clear();
 
-    _.times(this.get('settings.numAssaultsPerConquest'), () => {
-      let assaultConfig = _.sample(this.get('db.challenges'));
+    let assaultConfigs = _.sample(this.get('db.challenges'), this.get('settings.numAssaultsPerConquest'));
 
+    assaultConfigs.forEach((assaultConfig) => {
       this.get('assaults').pushObject(
         {
           id: v1(),
