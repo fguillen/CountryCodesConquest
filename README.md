@@ -1,5 +1,7 @@
 # Country-codes-conquest
 
+![screenshot](https://github.com/fguillen/CountryCodesConquest/blob/master/etc/art/country_codes_conquest.jpg)
+
 Small web-application to test your ability of associating the correct Country Code to a Country Name
 
 State of the Playable Version: [http://fguillen.github.io/CountryCodesConquest/](http://fguillen.github.io/CountryCodesConquest/)
